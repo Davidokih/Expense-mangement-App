@@ -4,9 +4,11 @@ import ExpenseData from './ExpenseData'
 import { BiSearch } from "react-icons/bi"
 import { RiAddFill } from "react-icons/ri"
 import { IoIosFunnel } from "react-icons/io"
+import {FaLongArrowAltDown,FaLongArrowAltUp} from "react-icons/fa"
 
 const ExpComp = () => {
   return (
+    <>
     <Container>
       <Header>
         <Hold>
@@ -23,10 +25,10 @@ const ExpComp = () => {
           <Show>
             Show
             <Select>
-              <Option>1</Option>
-              <Option>1</Option>
-              <Option>1</Option>
-              <Option>1</Option>
+              <Option>10</Option>
+              <Option>20</Option>
+              <Option>30</Option>
+              <Option>40</Option>
             </Select>
             entries
           </Show>
@@ -37,13 +39,13 @@ const ExpComp = () => {
         </Top>
         <Buttom>
           <Head>
-            <Nav>Category <span>||</span></Nav>
-            <Nav>Customer <span>||</span></Nav>
-            <Nav>Expense Dates <span>||</span></Nav>
-            <Nav>Notes <span>||</span></Nav>
-            <Nav>Amount <span>||</span></Nav>
-            <Nav>Status <span>||</span></Nav>
-            <Nav>Action <span>||</span></Nav>
+            <Nav>Category <span><Icon1 color='#622559'/><Icon4 color='lightgray'/></span></Nav>
+            <Nav>Customer <span><Icon1 color='lightgray'/><Icon4 color='lightgray'/></span></Nav>
+            <Nav>Expense Dates <span><Icon1 color='lightgray'/><Icon4 color='lightgray'/></span></Nav>
+            <Nav>Notes <span><Icon1 color='lightgray'/><Icon4 color='lightgray'/></span></Nav>
+            <Nav>Amount <span><Icon1 color='lightgray'/><Icon4 color='lightgray'/></span></Nav>
+            <Nav>Status <span><Icon1 color='lightgray'/><Icon4 color='lightgray'/></span></Nav>
+            <Nav>Action <span><Icon1 color='lightgray'/><Icon4 color='lightgray'/></span></Nav>
           </Head>
           
         </Buttom>
@@ -62,11 +64,21 @@ const ExpComp = () => {
         </Top>
       </Wrapper>
     </Container>
+      
+    </>
   )
 }
 
 export default ExpComp
 
+const Icon4 = styled(FaLongArrowAltDown)`
+  padding: 0px;
+  margin: 0px;
+`
+const Icon1 = styled(FaLongArrowAltUp)`
+  padding: 0px;
+  margin: 0px;
+`
 const Next = styled.div`
   width: 200px;
   padding: 0px 3px;
@@ -94,10 +106,10 @@ const Next = styled.div`
 `
 const Option = styled.option``
 const Select = styled.select`
-  height: 20px;
-  width: 40px;
+  height: 30px;
+  width: 50px;
   margin: 5px;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
 `
 const Icon3 = styled(IoIosFunnel)`
   font-size: 20px;
@@ -122,6 +134,14 @@ const Nav = styled.div`
   font-weight: 700;
   font-size: 20px;
   color: #1b2559;
+
+  span{
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+  }
 `
 const Head = styled.div`
   /* display: flex;
@@ -129,13 +149,28 @@ const Head = styled.div`
   justify-content: space-between; */
 
   display: grid;
-  grid-template-columns: 120px 230px 170px 200px 130px 150px 160px;
+  grid-template-columns: 100px 190px 150px 175px 90px 120px 160px;
   grid-gap: 4px;
+
+  @media (max-width: 1350px){
+    grid-template-columns: 120px 230px 170px 200px 130px 150px 160px;
+
+  }
 `
 const Buttom = styled.div`
   padding: 10px 20px;
   background-color: #f8f9fa;
-  width: 74.34rem;
+  /* width: 57rem; */
+width: calc(100%-70px);
+@media (max-width: 1200px){
+    /* overflow-x: scroll; */
+  /* width: 57rem; */
+  width: 74rem;
+
+
+  }
+
+  /* width: 100%; */
 
 `
 const Input = styled.input`
@@ -230,13 +265,26 @@ const Wrapper = styled.div`
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
-  overflow-x: scroll;
+  @media (max-width: 1350px){
+    overflow-x: scroll;
+  }
+
 `
 const Container = styled.div`
+  width: calc(100vw - 200px);
+
 background-color: #f7f8f9;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+	right: 0px;
+	top: 70px;
+
+  @media screen and (max-width: 1005px) {
+		width: 100%;
+	}
 `

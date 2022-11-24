@@ -35,7 +35,7 @@ const ExpenseData = () => {
           <Butt><span><BsTrash/></span><span/>Delete</Butt>
             </Hold>
           </Head>
-    </Container>
+      </Container>
     </>
   )
 }
@@ -110,7 +110,7 @@ const Head = styled.div`
 `
 const Container = styled.div`
 /* width: 100%; */
-width: 74rem;
+width: calc(100%-70px);
 padding: 10px 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
@@ -118,5 +118,8 @@ padding: 10px 20px;
   font-weight: 600;
   :hover{
     background-color: #9c9b9b;
+  }
+  @media (max-width: 1350px){
+    width: 74rem;
   }
 `

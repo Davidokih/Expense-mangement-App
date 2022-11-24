@@ -152,9 +152,19 @@ const Wrapper = styled.div`
 `
 const Container = styled.div`
 background-color: #f7f8f9;
-  width: 100%;
+  width: calc(100vw - 250px);
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  overflow: hidden;
+  position: absolute;
+	right: 0px;
+	top: 70px;
+
+  @media screen and (max-width: 1005px) {
+		width: 100%;
+	}
 `
