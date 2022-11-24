@@ -111,7 +111,7 @@ const SideHold = styled.div`
 
   
   @media (max-width: 1000px) {
-    width: 230px;
+    width: 260px;
   display: block;
 
   height: 88%;
@@ -220,9 +220,8 @@ const Wrapper = styled.div`
 `;
 // const Wrap = styled.div``
 const Side = styled.div`
-  width: 230px;
+      width: 230px;
   height: 88%;
-  transition: all 350ms;
   overflow: hidden;
   /* display: flex; */
   background-color: white;
@@ -258,10 +257,11 @@ const Wrap = styled.div`
   margin-top: 20px;
 `;
 const Hold = styled(NavLink)`
-  width: 100%;
+    width: 100%;
   display: flex;
   align-items: center;
-  height: 70px;
+  /* height: 100px; */
+  padding: 10px 0px;
   cursor: pointer;
   text-decoration: none;
 

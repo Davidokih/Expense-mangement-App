@@ -74,19 +74,20 @@ const Wrap = styled.div`
   margin-top: 20px;
 `;
 const Hold = styled(NavLink)`
-  width: 100%;
+  width: 255px;
   display: flex;
   align-items: center;
   height: 70px;
   cursor: pointer;
   text-decoration: none;
+  /* border-right: 1px solid purple; */
 
-  :active{
+  /* :active{
     border-left: 5px solid #7638ff;
     background-color: #f8f5ff;
     color: #7638ff;
 
-  }
+  } */
 
   :focus{
     border-left: 5px solid #7638ff;

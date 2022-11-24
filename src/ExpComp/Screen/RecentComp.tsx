@@ -86,10 +86,11 @@ const RecentComp = () => {
 
 export default RecentComp
 
-// const Date = styled.div`
-// position: relative;
-//     width: 90%;
-// `
+const Date = styled.div`
+/* position: relative; */
+    width: 90%;
+    padding: 0px 10px;
+`
 const Text = styled.div`
     font-weight: 700;
     color: #939396;
@@ -150,10 +151,14 @@ const Carded = styled.div`
   }
 `;
 const Container = styled.div`
-    width: 90%;
+    width: 98%;
   min-height: 360px;
   display: flex;
   /* flex-wrap: wrap; */
+  @media (max-width: 1208px) {
+    /* flex-wrap: wrap; */
+    width: 95%;
+  }
   @media (max-width: 768px) {
     flex-wrap: wrap;
     width: 100%;

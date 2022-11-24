@@ -43,11 +43,12 @@ const Head = styled.div`
 
 `
 const Buttom = styled.div`
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   background-color: #f8f9fa;
   // width: 74.34rem;
   width: 500px;
   overflow-x: scroll;
+  scroll-behavior: smooth;
 
 
 `

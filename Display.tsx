@@ -1,17 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import ChartComp from "./ChartComp";
-import RecentComp from "./RecentComp";
 import {
+  FaCube,
+  FaCubes,
   FaDollarSign,
   FaFilePdf,
+  FaHome,
+  FaUserFriends,
 } from "react-icons/fa";
 import {
+  MdDashboard,
   MdGroup,
   MdInventory,
+  MdLogout,
+  MdSettings,
 } from "react-icons/md";
-const Dashboard = () => {
+import { TbTransferOut } from "react-icons/tb";
+const Display = () => {
   return (
     <div>
       <Container>
@@ -92,10 +98,48 @@ const Dashboard = () => {
               </Box>
             </Top>
             <Middle>
-              <ChartComp />
+              <Card>
+                <One>
+                  <Text>Sales Analystic</Text>
+                  <Texthold>
+                    <Test>Monthly</Test>
+                  </Texthold>
+                </One>
+                <Two>
+                  <Twohold>
+                    <Currencyhold>
+                      <Test>Total Sales</Test>
+                      <Currency>$1000</Currency>
+                    </Currencyhold>
+                    <Currencyhold>
+                      <Test>Expenses</Test>
+                      <Currency2>$500</Currency2>
+                    </Currencyhold>
+                    <Currencyhold>
+                      <Test>Receipt</Test>
+                      <Currency1>$100</Currency1>
+                    </Currencyhold>
+                    <Currencyhold>
+                      <Test>Earnings</Test>
+                      <Currency3>$300</Currency3>
+                    </Currencyhold>
+                  </Twohold>
+                </Two>
+                <Three></Three>
+              </Card>
+              <Carded>
+                <One>
+                  <Text>Invoice Analystic</Text>
+                  <Texthold>
+                    <Test>Monthly</Test>
+                  </Texthold>
+                </One>
+                <Four></Four>
+              </Carded>
             </Middle>
             <Middle>
-              <RecentComp />
+              <Card></Card>
+              <Carded></Carded>
             </Middle>
           </Wrapper>
         </Main>
@@ -104,20 +148,126 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Display;
 // const Container = styled.div``
+// const Container = styled.div``
+const Carded = styled.div`
+  width: 400px;
+  height: 350px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 8px;
+  @media (max-width: 1024px) {
+    width: 93%;
+  }
+`;
 
+const Currency = styled.div`
+  color: purple;
+  font-weight: bold;
+  font-size: 16px;
+`;
+const Currency1 = styled.div`
+  color: green;
+  font-weight: bold;
+  font-size: 16px;
+`;
+const Currency2 = styled.div`
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+`;
+const Currency3 = styled.div`
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+`;
+const Currencyhold = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const Texthold = styled.div`
+  border: 1.5px solid #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 22px;
+  /* margin-top: 20px; */
+`;
+const Text = styled.div`
+  font-weight: bold;
+  color: #aaa;
+  font-size: 18px;
+`;
+const Test = styled.div`
+  font-weight: bold;
+  color: #aaa;
+  font-size: 12px;
+`;
+const Four = styled.div`
+  width: 100%;
+  height: 290px;
+  /* background-color: green; */
+`;
+const Three = styled.div`
+  width: 100%;
+  height: 230px;
+  /* background-color: green; */
+`;
+const Two = styled.div`
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+`;
+const Twohold = styled.div`
+  width: 70%;
+  height: 100%;
+  /* background-color: #294329; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 7px;
+`;
+const One = styled.div`
+  width: 97%;
+  padding: 5px;
+  height: 40px;
+  border-bottom: 1.7px solid #dadbdc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Card = styled.div`
+  width: 526px;
+  height: 350px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 8px;
+  @media (max-width: 1024px) {
+    width: 93%;
+    /* background-color: gray; */
+  }
+`;
 const Top = styled.div`
   width: 100%;
   min-height: 150px;
 
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* flex-direction: row; */
+  flex-direction: row;
   flex-wrap: wrap;
   margin-top: 41px;
-  /* background-color: blue; */
 `;
 const Box = styled.div`
   width: 230px;
@@ -128,10 +278,10 @@ const Box = styled.div`
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
   margin: 5px;
-  
-  @media (max-width: 1245px) {
+  @media (max-width: 1024px) {
     width: 45%;
     margin: 7px;
+    /* background-color: rgb(227, 23, 23); */
   }
   @media (max-width: 425px) {
     width: 95%;
@@ -250,7 +400,7 @@ const Down = styled.div`
 `;
 const Middle = styled.div`
   width: 100%;
-  /* min-height: 360px; */
+  min-height: 360px;
   display: flex;
   flex-wrap: wrap;
 
@@ -260,57 +410,31 @@ const Middle = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 90%;
-  /* min-height: 100%; */
+  width: 100%;
+  min-height: 100%;
   /* background-color: red; */
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
-  margin-top: 20px;
-  /* margin-left: 180px; */
- 
-  @media (max-width: 1100px) {
-    margin-left: 200px;
-    
-  }
-  @media (max-width: 1000px) {
-    margin-left: 0px;
-    width: 98%;
-    
-  }
 `;
 
 const Container = styled.div`
-  /* width: 100%; */
-  width: calc(100vw - 190px);
-  min-height: calc(100vh - 60px);
+  width: calc(100vw - 290px);
+  min-height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
-  background-color: #f8f9fa;
-  /* background-color: gold; */
-  overflow: hidden;
-  position: absolute;
-	right: 0px;
-	top: 50px;
-
-  @media screen and (max-width: 1100px) {
-		width: 95%;
-	}
-  @media screen and (max-width: 1005px) {
-		width: 100%;
-	}
-
   /* background-color: #352b1e; */
-`
+`;
+
+//box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+//box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+//box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 
 const Main = styled.div`
-  /* background-color: blue; */
+  // background-color: blue;
   width: 100%;
-  /* height: 92%; */
-  
-
-  min-height: calc(100vh - 60px);
+  min-height: 100%;
   display: flex;
   justify-content: center;
   /* align-items: center; */
