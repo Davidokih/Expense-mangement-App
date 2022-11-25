@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import ChartComp from "./ChartComp";
 import RecentComp from "./RecentComp";
+import { Progress } from 'rsuite';
 import {
   FaDollarSign,
   FaFilePdf,
@@ -11,6 +12,7 @@ import {
   MdGroup,
   MdInventory,
 } from "react-icons/md";
+
 const Dashboard = () => {
   return (
     <div>
@@ -28,7 +30,14 @@ const Dashboard = () => {
                     </Texxt>
                   </Up>
                   <Mid>
-                    <Yellow></Yellow>
+                  <>
+                    {/* <Progress.Line /> */}
+                    <Progress.Line percent={30} strokeColor="#ffc107" />
+                    {/* <Progress.Line percent={30} status="active" />
+                    <Progress.Line percent={50} status="fail" />
+                    <Progress.Line percent={100} status="success" />
+                    <Progress.Line percent={80} showInfo={false} /> */}
+                  </>
                   </Mid>
                   <Down>
                     <span>1.5%</span> since last week
@@ -110,6 +119,7 @@ export default Dashboard;
 const Top = styled.div`
   width: 100%;
   min-height: 150px;
+  /* background-color: gold; */
 
   display: flex;
   justify-content: center;
@@ -249,14 +259,9 @@ const Down = styled.div`
   }
 `;
 const Middle = styled.div`
-  width: 100%;
-  /* min-height: 360px; */
   display: flex;
-  flex-wrap: wrap;
 
   justify-content: center;
-  /* align-items: center; */
-  /* background-color: green; */
 `;
 
 const Wrapper = styled.div`

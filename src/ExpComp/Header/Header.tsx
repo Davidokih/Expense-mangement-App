@@ -12,6 +12,9 @@ import {
   MdInventory,
   MdSettings,
 } from "react-icons/md";
+import {BiSearch,BiChevronDown} from "react-icons/bi"
+import {BsChevronDown} from "react-icons/bs"
+import {MdOutlineNotifications} from "react-icons/md"
 import SlideComp from "./SlideComp";
 import {NavLink} from "react-router-dom"
 
@@ -35,10 +38,30 @@ const Header = () => {
     <div>
       <Container>
         <Wrapper>
+          <Left>
+            <Logo>Logo</Logo>
+          <MenuHold>
           { change ? (<FaBars fontSize="20px" cursor="pointer" onClick={  changeFalse} />) : 
           <FaBars fontSize="20px" cursor="pointer" onClick={changeTrue}/>}
-          <h2>Logo</h2>
-          <h4>Admin</h4>
+            </MenuHold>
+            <Search>
+            <Input placeholder="Search"/>
+            <Icon></Icon>
+          </Search>
+          </Left>
+          <Right>
+            <Icon8>Icon</Icon8>
+            <Prof>
+              
+              <Image />
+              <Ad>
+                <span>Admin</span>
+                <span>
+                  <Icon9>Icon</Icon9>
+                </span>
+              </Ad>
+            </Prof>
+          </Right>
         </Wrapper>
       </Container>
       <Side>
@@ -89,6 +112,79 @@ const Header = () => {
 };
 
 export default Header;
+
+const Ad = styled.div`
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: blue; */
+
+  span{
+    font-weight: 700;
+  }
+`
+const Image = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: gold;
+`
+const Prof = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+`
+const Icon9 = styled(BiChevronDown)`
+  font-weight: 500;
+`
+const Icon8 = styled(MdOutlineNotifications)`
+  font-size: 20px;
+`
+const Right = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+const Input = styled.input`
+  border: 0px;
+  outline: none;
+`
+const Icon = styled(BiSearch)`
+  cursor: pointer;
+`
+const Search = styled.div`
+  width: 200px;
+  padding: 0px 3px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+
+  span{
+    color: #908f8f;
+  }
+  `
+const Logo = styled.div`
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: 800;
+`
+const Left = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* width: 300px; */
+`
+const MenuHold = styled.div`
+  display: none;
+
+  @media (max-width: 1000px) {
+    display: block;
+  }
+`
 const Back = styled.div`
   
   display: none;
@@ -200,7 +296,6 @@ const Icon7 = styled(MdSettings)`
     color: #7638ff;
   }
 `
-const Icon8 = styled.div``
 const Container = styled.div`
   width: 100%;
   height: 60px;

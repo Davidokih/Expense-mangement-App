@@ -39,14 +39,15 @@ const RecentComp = () => {
                  </Cash>
               </Hold>
               </Wrap>
-              {/* <Date>
+              <Date>
                   <RecentData />
-              </Date> */}
+              </Date>
         </Card>
-          <Carded>
-          <Top>
+        <Card>
+
+            <Top>
                 <Show>
-                Recent Estimates
+                Recent Invoices
                 </Show>
                 <Search>
                     <Button>View All</Button>
@@ -76,10 +77,10 @@ const RecentComp = () => {
                  </Cash>
               </Hold>
               </Wrap>
-              {/* <Date>
+              <Date>
                   <RecentData />
-              </Date> */}
-              </Carded>
+              </Date>
+        </Card>
     </Container>
   )
 }
@@ -89,7 +90,9 @@ export default RecentComp
 const Date = styled.div`
 /* position: relative; */
     width: 90%;
-    padding: 0px 10px;
+    /* position: relative; */
+    /* background-color: chartreuse; */
+    /* padding: 0px 10px; */
 `
 const Text = styled.div`
     font-weight: 700;
@@ -122,8 +125,7 @@ const Wrap = styled.div`
     flex-direction: column;
 `
 const Card = styled.div`
-  width: 90%;
-  /* height: 350px; */
+    width: 470px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -131,14 +133,21 @@ const Card = styled.div`
   flex-direction: column;
   background-color: white;
   margin: 8px;
+  @media (max-width: 1270px) {
+    width: 460px;
+
+  }
+  @media (max-width: 1250px) {
+    width: 400px;
+
+  }
   @media (max-width: 900px) {
     width: 100%;
 
   }
 `;
 const Carded = styled.div`
-  width: 90%;
-  /* height: 350px; */
+  width: 350px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -154,13 +163,10 @@ const Container = styled.div`
     width: 98%;
   min-height: 360px;
   display: flex;
-  /* flex-wrap: wrap; */
-  @media (max-width: 1208px) {
-    /* flex-wrap: wrap; */
-    width: 95%;
-  }
+  flex-wrap: wrap;
+
+  /* background-color: gold; */
   @media (max-width: 768px) {
-    flex-wrap: wrap;
     width: 100%;
   }
 

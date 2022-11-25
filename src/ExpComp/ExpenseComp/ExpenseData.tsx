@@ -2,124 +2,122 @@ import React from 'react'
 import styled from "styled-components"
 import { FaRegEdit } from "react-icons/fa"
 import { BsTrash } from "react-icons/bs"
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import {FaLongArrowAltDown,FaLongArrowAltUp} from "react-icons/fa"
 
 
 const ExpenseData = () => {
   return (
-    <>
     <Container>
-      <Head>
-      <Nav>Advertising</Nav>
-            <Profile><Image /><span>Barbara Moore</span></Profile>
-            <Nav>15 Nov 2020</Nav>
-            <Nav>	Lorem ipsum dollar...</Nav>
-            <Nav>$145</Nav>
-            <Button>Approved</Button>
-        <Hold>
-          <NavLink to="/editExpense"><Butt><span><FaRegEdit /></span>Edit</Butt></NavLink>
-          <Butt><span><BsTrash/></span><span/>Delete</Butt>
-            </Hold>
+          <Buttom>
+          <Head>
+            <Th><HoldHead>Category <span><FaLongArrowAltUp /><FaLongArrowAltDown color="lightgray"/></span></HoldHead></Th>
+            <Th><HoldHead>Customer <span><FaLongArrowAltUp color="lightgray"/><FaLongArrowAltDown color="lightgray"/></span></HoldHead></Th>
+            <Th><HoldHead>Expense Date <span><FaLongArrowAltUp color="lightgray"/><FaLongArrowAltDown color="lightgray"/></span></HoldHead></Th>
+            <Th><HoldHead>Notes <span><FaLongArrowAltUp color="lightgray"/><FaLongArrowAltDown color="lightgray"/></span></HoldHead></Th>
+            <Th><HoldHead>Amount <span><FaLongArrowAltUp color="lightgray"/><FaLongArrowAltDown color="lightgray"/></span></HoldHead></Th>
+            <Th><HoldHead>Status <span><FaLongArrowAltUp color="lightgray"/><FaLongArrowAltDown color="lightgray"/></span></HoldHead></Th>
+            <Th><HoldHead>Action <span><FaLongArrowAltUp color="lightgray"/><FaLongArrowAltDown color="lightgray"/></span></HoldHead> </Th>
           </Head>
-      </Container>
-      <Container>
-      <Head>
-      <Nav>Advertising</Nav>
-            <Profile><Image /><span>Barbara Moore</span></Profile>
-            <Nav>15 Nov 2020</Nav>
-            <Nav>	Lorem ipsum dollar...</Nav>
-            <Nav>$145</Nav>
-            <Button>Approved</Button>
-        <Hold>
-          <Butt><span><FaRegEdit /></span>Edit</Butt>
-          <Butt><span><BsTrash/></span><span/>Delete</Butt>
+          <Body>
+            <Td>Advertising</Td>
+            <Td><UserHold>
+          <span><Image /></span>Barbara Moore
+          </UserHold></Td>
+            <Td>18 Nov 2020</Td>
+            <Td>This is now approved...</Td>
+            <Td>$22.2 </Td>
+            <Td><Button bd="" cl="ff">Approved</Button> </Td>
+          <Td>
+            <Hold>
+              <NavLink to="/editExpense" style={{textDecoration: "none"}}><Button bd="fff" cl="ff"><span><FaRegEdit /></span>Edit</Button></NavLink>
+              <Button bd="ff" cl=""><span><BsTrash /></span>Delete</Button>
             </Hold>
-          </Head>
-      </Container>
-    </>
+            </Td>
+          </Body>
+        </Buttom>
+    </Container>
   )
 }
 
 export default ExpenseData
 
-const Butt = styled.button`
-  /* padding: 5px 20px; */
-  /* background-color: #c1efc1; */
-  /* width: 100px;
-  height: ; */
-  padding: 10px;
-  border-radius: 5px;
-  font-weight: 600;
-  border: 1px solid lightgray;
-  margin: 5px;
-  color: red;
-  cursor: pointer;
-`
-const Button = styled.button`
-  /* padding: 5px 20px; */
-  background-color: #c1efc1;
-  cursor: pointer;
-
-  /* width: 100px;
-  height: ; */
-  padding: 10px;
-  border-radius: 5px;
-  font-weight: 600;
-  color: #0bb10b;
-  border: 0px;
-
+const Container = styled.div`
+  width: 100%;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 `
 const Image = styled.img`
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: gray;
-  margin-right: 20px;
+  background-color: gold;
+  margin-right: 10px;
 `
-const Profile = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+const Button = styled.button<{bd: string, cl: string}>`
+  padding: 7px 20px;
+  background-color: #ece5e5;
+  border: ${({ bd }) => (bd ? "1px solid gray" : "0px")};
+  border-radius: 5px;
+  margin: 5px;
+  color: ${({ cl }) => (cl ? "#109f10" : "red")};
+  font-weight: 600;
+  cursor: pointer;
 
   span{
-
-    :hover{
-      cursor: pointer;
-      text-decoration: underline;
-      color: blue;
-    }
+    margin-left: 3px;
   }
 `
 const Hold = styled.div``
-const Nav = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* border: 1px solid blue; */
-  /* border-left: 1px solid blue; */
-`
-const Head = styled.div`
+const HoldHead = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background-color: gold; */
-  /* display: grid;
-  grid-template-columns: 120px 230px 170px 200px 130px 170px 150px;
-
-  grid-gap: 6px; */
+  /* color: #0dbb0d; */
 `
-const Container = styled.div`
-/* width: 100%; */
-width: calc(100%-70px);
-padding: 10px 20px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+const UserHold = styled.div`
+  display: flex;
+  align-items: center;
+  
 
-  margin: 10px 0px;
-  font-weight: 600;
   :hover{
-    background-color: #9c9b9b;
+    color: blue;
   }
-  @media (max-width: 1350px){
-    width: 74rem;
+  cursor: pointer;
+`
+const Td = styled.td`
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 400;
+
+`
+const Th = styled.th`
+  padding: 10px 10px;
+  background-color: #f8f9fa;
+
+  color: #1b2559;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: start;
+  // border: 1px solid black;
+`
+const Head = styled.tr`
+  border-bottom: 1px solid lightgray;
+`
+const Body = styled.tr`
+
+  border-bottom: 1px solid lightgray;
+  :hover{
+    background-color: lightgray;
   }
 `
+const Buttom = styled.table`
+  width: 78rem;
+  /* padding: 0px 20px; */
+
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+`
+
